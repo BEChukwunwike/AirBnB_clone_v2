@@ -6,5 +6,5 @@ mkdir -p /data/web_static/releases/test /data/web_static/shared
 echo "AirBnB Clone test" | tee /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test/ /data/web_static/current
 chown -hR ubuntu:ubuntu /data/
-sed -i '14i\   location /hbnb_static/ {\n      alias /data/web_static/current/;\n   }' /etc/nginx/sites-available/default
+sed -i '16i\\n\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t\tindex index.html index.htm;\n\t}' /etc/nginx/sites-available/default
 service nginx start
