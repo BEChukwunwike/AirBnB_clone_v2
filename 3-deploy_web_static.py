@@ -11,14 +11,14 @@ from os.path import isdir, exists
 
 def do_pack():
     """A function that creates a .tgz archive."""
-    ver = datetime.now().strftime("%Y%m%d%H%M%S")
-    if isdir("versions") is False:
-        local("mkdir versions")
-    file_version = "versions/web_static_{}.tgz".format(ver)
-    archive = local("tar -cvzf {} web_static".format(file_version))
-    if archive.succeeded:
+    try:
+        ver = datetime.now().strftime("%Y%m%d%H%M%S")
+        if isdir("versions") is False:
+            local("mkdir versions")
+        file_version = "versions/web_static_{}.tgz".format(ver)
+        local("tar -cvzf {} web_static".format(file_version))
         return file_version
-    else:
+    except:
         return None
 
 
