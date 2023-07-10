@@ -15,6 +15,7 @@ def do_pack():
     file_version = "versions/web_static_{}.tgz".format(ver)
     archive = local("tar -cvzf {} web_static".format(file_version))
     if archive.succeeded:
+        print("Test file")
         return file_version
     else:
         return None
