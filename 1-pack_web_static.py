@@ -9,12 +9,12 @@ from os.path import isdir
 
 def do_pack():
     """A function that creates a .tgz archive."""
-    try:
-        ver = datetime.now().strftime("%Y%m%d%H%M%S")
-        if isdir("versions") is False:
-            local("mkdir versions")
-        file_version = "versions/web_static_{}.tgz".format(ver)
-        local("tar -cvzf {} web_static".format(file_version))
+    ver = datetime.now().strftime("%Y%m%d%H%M%S")
+    if isdir("versions") is False:
+        local("mkdir versions")
+    file_version = "versions/web_static_{}.tgz".format(ver)
+    archive = local("tar -cvzf {} web_static".format(file_version))
+    if archive.succeeded:
         return file_version
-    except:
+    else:
         return None
