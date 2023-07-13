@@ -14,7 +14,7 @@ from os.path import exists
 import os
 
 env.user = "ubuntu"
-env.hosts = ['<IP web-01>', 'IP web-02']
+env.hosts = ['34.224.95.183', '100.26.224.205']
 
 
 def do_pack():
