@@ -17,4 +17,4 @@ def do_pack():
     if archive.succeeded:
         return file_version
     else:
-        return None
+        raise Exception('None')
