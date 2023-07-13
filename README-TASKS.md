@@ -103,13 +103,58 @@ $ pip3 install Fabric3==1.14.post1
 Video library(1 total)
 ![](https://intranet.alxswe.com/projects/288#task-1605)
 Deploy static files with Fabric
+
+---
+
 Quiz questions
 
+Question #0
+What is the Fabric command to execute a shell command locally?
+- run
+- put
+- **local**
+- get
 
+Question #1
+What is the Fabric command to download a file (from remote to local)?
+- run
+- **get**
+- local
+- put
+
+Question #2
+What is the Fabric command to upload a file (from local to remote)?
+- run
+- get
+- local
+- **put**
+
+Question #3
+What is the default name of a Fabric file?
+- Fabric.py
+- Dockerfile
+- Fabricfile
+- **fabfile.py**
+
+Question #4
+What is the Fabric command to execute a shell command remotely?
+- **run**
+- put
+- local
+- get
+
+Question #5
+What is the Fabric command for asking information to the user?
+- ask
+- put
+- local
+- **prompt**
+
+---
 
 Tasks
-1. Prepare your web servers
-mandatory
+0. Prepare your web servers
+<button>**mandatory**</button>
 
 Write a Bash script that sets up your web servers for the deployment of web_static. It must:
 
@@ -124,12 +169,13 @@ Write a Bash script that sets up your web servers for the deployment of web_stat
     Give ownership of the /data/ folder to the ubuntu user AND group (you can assume this user and group exist). This should be recursive; everything inside should be created/owned by this user/group.
     Update the Nginx configuration to serve the content of /data/web_static/current/ to hbnb_static (ex: https://mydomainname.tech/hbnb_static). Don’t forget to restart Nginx after updating the configuration:
         Use alias inside your Nginx configuration
-        Tip
+
+   - [Tip](https://stackoverflow.com/questions/10631933/nginx-static-file-serving-confusion-with-root-alias)
 
 Your program should always exit successfully. Don’t forget to run your script on both of your web servers.
 
 In optional, you will redo this task but by using Puppet
-
+```sh
 ubuntu@89-web-01:~/$ sudo ./0-setup_web_static.sh
 ubuntu@89-web-01:~/$ echo $?
 0
@@ -160,14 +206,16 @@ ubuntu@89-web-01:~/$ curl localhost/hbnb_static/index.html
   </body>
 </html>
 ubuntu@89-web-01:~/$
-
+```
 Repo:
 
     GitHub repository: AirBnB_clone_v2
     File: 0-setup_web_static.sh
 
+---
+
 1. Compress before sending
-mandatory
+<button>**mandatory**</button>
 
 Write a Fabric script that generates a .tgz archive from the contents of the web_static folder of your AirBnB Clone repo, using the function do_pack.
 
@@ -176,7 +224,7 @@ Write a Fabric script that generates a .tgz archive from the contents of the web
     All archives must be stored in the folder versions (your function should create this folder if it doesn’t exist)
     The name of the archive created must be web_static_<year><month><day><hour><minute><second>.tgz
     The function do_pack must return the archive path if the archive has been correctly generated. Otherwise, it should return None
-
+```sh
 guillaume@ubuntu:~/AirBnB_clone_v2$ fab -f 1-pack_web_static.py do_pack
 Packing web_static to versions/web_static_20170314233357.tgz
 [localhost] local: tar -cvzf versions/web_static_20170314233357.tgz web_static
@@ -227,14 +275,16 @@ Done.
 guillaume@ubuntu:~/AirBnB_clone_v2$ ls -l versions/web_static_20170314233357.tgz
 -rw-rw-r-- 1 guillaume guillaume 21283 Mar 14 23:33 versions/web_static_20170314233357.tgz
 guillaume@ubuntu:~/AirBnB_clone_v2$
-
+```
 Repo:
 
     GitHub repository: AirBnB_clone_v2
     File: 1-pack_web_static.py
 
-1. Deploy archive!
-mandatory
+---
+
+2. Deploy archive!
+<button>**mandatory**</button>
 
 Write a Fabric script (based on the file 1-pack_web_static.py) that distributes an archive to your web servers, using the function do_deploy:
 
@@ -253,7 +303,7 @@ Write a Fabric script (based on the file 1-pack_web_static.py) that distributes 
 In the following example, the SSH key and the username used for accessing to the server are passed in the command line. Of course, you could define them as Fabric environment variables (ex: env.user =...)
 
 Disclaimer: commands execute by Fabric displayed below are linked to the way we implemented the archive function do_pack - like the mv command - depending of your implementation of it, you may don’t need it
-
+```sh
 guillaume@ubuntu:~/AirBnB_clone_v2$ fab -f 2-do_deploy_web_static.py do_deploy:archive_path=versions/web_static_20170315003959.tgz -i my_ssh_private_key -u ubuntu
 [52.55.249.213] Executing task 'do_deploy'
 [52.55.249.213] put: versions/web_static_20170315003959.tgz -> /tmp/web_static_20170315003959.tgz
@@ -297,14 +347,16 @@ guillaume@ubuntu:~/AirBnB_clone_v2$ curl 54.157.32.137/hbnb_static/0-index.html
     </body>
 </html>
 guillaume@ubuntu:~/AirBnB_clone_v2$
-
+```
 Repo:
 
     GitHub repository: AirBnB_clone_v2
     File: 2-do_deploy_web_static.py
 
-1. Full deployment
-mandatory
+---
+
+3. Full deployment
+<button>**mandatory**</button>
 
 Write a Fabric script (based on the file 2-do_deploy_web_static.py) that creates and distributes an archive to your web servers, using the function deploy:
 
@@ -318,7 +370,7 @@ Write a Fabric script (based on the file 2-do_deploy_web_static.py) that creates
     You must use this script to deploy it on your servers: xx-web-01 and xx-web-02
 
 In the following example, the SSH key and the username used for accessing to the server are passed in the command line. Of course, you could define them as Fabric environment variables (ex: env.user =…)
-
+```sh
 guillaume@ubuntu:~/AirBnB_clone_v2$ fab -f 3-deploy_web_static.py deploy -i my_ssh_private_key -u ubuntu
 [52.55.249.213] Executing task 'deploy'
 Packing web_static to versions/web_static_20170315015620.tgz
@@ -405,14 +457,16 @@ guillaume@ubuntu:~/AirBnB_clone_v2$ curl 54.157.32.137/hbnb_static/0-index.html
     </body>
 </html>
 guillaume@ubuntu:~/AirBnB_clone_v2$
-
+```
 Repo:
 
     GitHub repository: AirBnB_clone_v2
     File: 3-deploy_web_static.py
 
-1. Keep it clean!
-#advanced
+---
+
+4. Keep it clean!
+<button>**#advanced**</button>
 
 Write a Fabric script (based on the file 3-deploy_web_static.py) that deletes out-of-date archives, using the function do_clean:
 
@@ -427,7 +481,7 @@ Write a Fabric script (based on the file 3-deploy_web_static.py) that deletes ou
     All remote commands must be executed on both of your web servers (using the env.hosts = ['<IP web-01>', 'IP web-02'] variable in your script)
 
 In the following example, the SSH key and the username used for accessing to the server are passed in the command line. Of course, you could define them as Fabric environment variables (ex: env.user =…)
-
+```sh
 guillaume@ubuntu:~/AirBnB_clone_v2$ ls -ltr versions
 -rw-r--r-- 1 vagrant vagrant 27280335 Mar 15  2017 web_static_20170315015414.tgz
 -rw-r--r-- 1 vagrant vagrant 27280335 Mar 15  2017 web_static_20170315015448.tgz
@@ -438,18 +492,19 @@ guillaume@ubuntu:~/AirBnB_clone_v2$ ls -ltr versions
 -rw-r--r-- 1 vagrant vagrant 27280335 Mar 15  2017 web_static_20170315015507.tgz
 -rw-r--r-- 1 vagrant vagrant 27280335 Mar 15  2017 web_static_20170315015620.tgz
 guillaume@ubuntu:~/AirBnB_clone_v2$
-
+```
 Repo:
 
     GitHub repository: AirBnB_clone_v2
     File: 100-clean_web_static.py
 
+---
+
 5. Puppet for setup
-#advanced
-Score: 0.0% (Checks completed: 0.0%)
+<button>**#advanced**</button>
 
 Redo the task #0 but by using Puppet:
-
+```sh
 ubuntu@89-web-01:~/$ puppet apply 101-setup_web_static.pp
 ....
 ubuntu@89-web-01:~/$ ls -l /data
@@ -479,7 +534,7 @@ ubuntu@89-web-01:~/$ curl localhost/hbnb_static/index.html
   </body>
 </html>
 ubuntu@89-web-01:~/$
-
+```
 Repo:
 
     GitHub repository: AirBnB_clone_v2
