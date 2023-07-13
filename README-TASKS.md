@@ -3,16 +3,8 @@ DevOpsPythonSysAdminScriptingCI/CD
 
     By: Guillaume, CTO at Holberton School
     Weight: 1
-    Project over - took place from Jul 5, 2023 6:00 AM to Jul 7, 2023 6:00 AM
+    Project took place from Jul 5, 2023 6:00 AM to Jul 7, 2023 6:00 AM
     An auto review will be launched at the deadline
-
-In a nutshell…
-
-    Auto QA review: 13.35/51 mandatory & 6.5/35 optional
-    Altogether:  31.04%
-        Mandatory: 26.18%
-        Optional: 18.57%
-        Calculation:  26.18% + (26.18% * 18.57%)  == 31.04%
 
 Concepts
 
@@ -35,14 +27,14 @@ Resources
 
 Read or watch:
 
-    How to use Fabric
-    How to use Fabric in Python
-    Fabric and command line options
-    CI/CD concept page
-    Nginx configuration for beginners
-    Difference between root and alias on NGINX
-    Fabric for Python 3
-    Fabric Documentation
+- [How to use Fabric](https://www.digitalocean.com/community/tutorials/how-to-use-fabric-to-automate-administration-tasks-and-deployments)
+- [How to use Fabric in Python](https://www.pythonforbeginners.com/systems-programming/how-to-use-fabric-in-python)
+- [Fabric and command line options](https://docs.fabfile.org/en/1.13/usage/fab.html)
+- [CI/CD concept page]()
+- [Nginx configuration for beginners](http://nginx.org/en/docs/beginners_guide.html)
+- [Difference between root and alias on NGINX](https://stackoverflow.com/questions/10631933/nginx-static-file-serving-confusion-with-root-alias)
+- [Fabric for Python 3](https://github.com/mathiasertl/fabric)
+- [Fabric Documentation](https://www.fabfile.org)
 
 Learning Objectives
 
@@ -93,7 +85,7 @@ Bash Scripts
 
 More Info
 Install Fabric for Python 3 - version 1.14.post1
-
+```sh
 $ pip3 uninstall Fabric
 $ sudo apt-get install libffi-dev
 $ sudo apt-get install libssl-dev
@@ -107,15 +99,17 @@ $ pip3 install cryptography==2.8
 $ pip3 install bcrypt==3.1.7
 $ pip3 install PyNaCl==1.3.0
 $ pip3 install Fabric3==1.14.post1
-
+```
 Video library(1 total)
+![](https://intranet.alxswe.com/projects/288#task-1605)
 Deploy static files with Fabric
 Quiz questions
-Great! You've completed the quiz successfully! Keep going! (Show quiz)
+
+
+
 Tasks
-0. Prepare your web servers
+1. Prepare your web servers
 mandatory
-Score: 65.0% (Checks completed: 100.0%)
 
 Write a Bash script that sets up your web servers for the deployment of web_static. It must:
 
@@ -174,7 +168,6 @@ Repo:
 
 1. Compress before sending
 mandatory
-Score: 45.5% (Checks completed: 70.0%)
 
 Write a Fabric script that generates a .tgz archive from the contents of the web_static folder of your AirBnB Clone repo, using the function do_pack.
 
@@ -240,9 +233,8 @@ Repo:
     GitHub repository: AirBnB_clone_v2
     File: 1-pack_web_static.py
 
-2. Deploy archive!
+1. Deploy archive!
 mandatory
-Score: 3.13% (Checks completed: 6.25%)
 
 Write a Fabric script (based on the file 1-pack_web_static.py) that distributes an archive to your web servers, using the function do_deploy:
 
@@ -311,9 +303,8 @@ Repo:
     GitHub repository: AirBnB_clone_v2
     File: 2-do_deploy_web_static.py
 
-3. Full deployment
+1. Full deployment
 mandatory
-Score: 3.85% (Checks completed: 7.69%)
 
 Write a Fabric script (based on the file 2-do_deploy_web_static.py) that creates and distributes an archive to your web servers, using the function deploy:
 
@@ -420,9 +411,8 @@ Repo:
     GitHub repository: AirBnB_clone_v2
     File: 3-deploy_web_static.py
 
-4. Keep it clean!
+1. Keep it clean!
 #advanced
-Score: 26.0% (Checks completed: 52.0%)
 
 Write a Fabric script (based on the file 3-deploy_web_static.py) that deletes out-of-date archives, using the function do_clean:
 
