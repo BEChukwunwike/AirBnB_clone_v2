@@ -18,17 +18,17 @@ Resources
 
 Read or watch:
 
-    What is a Web Framework?
-    A Minimal Application
-    Routing (except “HTTP Methods”)
-    Rendering Templates
-    Synopsis
-    Variables
-    Comments
-    Whitespace Control
-    List of Control Structures (read up to “Call”)
-    Flask
-    Jinja
+- [What is a Web Framework?]()
+- [A Minimal Application]()
+- [Routing]() (except “HTTP Methods”)
+- [Rendering Templates]()
+- [Synopsis]()
+- [Variables]()
+- [Comments]()
+- [Whitespace Control]()
+- [List of Control Structures]() (read up to “Call”)
+- [Flask]()
+- [Jinja]()
 
 Learning Objectives
 
@@ -86,13 +86,15 @@ Install Flask
 
 $ pip3 install Flask
 
+![](https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step3.png)
+
 Manual QA Review
 
 It is your responsibility to request a review for this project from a peer before the project’s deadline. If no peers have been reviewed, you should request a review from a TA or staff member.
 Video library(1 total)
 Python: Flask the web framework
 Tasks
-0. Hello Flask!
+1. Hello Flask!
 mandatory
 
 Write a script that starts a Flask web application:
@@ -371,15 +373,15 @@ Before using Flask to display our HBNB data, you will need to update some part o
 
 Update FileStorage: (models/engine/file_storage.py)
 
-    Add a public method def close(self):: call reload() method for deserializing the JSON file to objects
+- Add a public method def close(self):: call reload() method for deserializing the JSON file to objects
 
 Update DBStorage: (models/engine/db_storage.py)
 
-    Add a public method def close(self):: call remove() method on the private session attribute (self.__session) tips or close() on the class Session tips
+- Add a public method def close(self):: call remove() method on the private session attribute (self.__session) [tips](https://docs.sqlalchemy.org/en/13/orm/contextual.html) or close() on the class Session [tips](https://docs.sqlalchemy.org/en/13/orm/session_api.html)
 
 Update State: (models/state.py) - If it’s not already present
 
-    If your storage engine is not DBStorage, add a public getter method cities to return the list of City objects from storage linked to the current State
+- If your storage engine is not DBStorage, add a public getter method cities to return the list of City objects from storage linked to the current State
 
 guillaume@ubuntu:~/AirBnB_v2$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3
 >>> from models import storage
@@ -564,7 +566,7 @@ Write a script that starts a Flask web application:
             UL tag: with the list of all State objects present in DBStorage sorted by name (A->Z) tip
                 LI tag: description of one State: <state.id>: <B><state.name></B> + UL tag: with the list of City objects linked to the State sorted by name (A->Z)
                     LI tag: description of one City: <city.id>: <B><city.name></B>
-    Import this 7-dump to have some data
+    Import this [7-dump](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/290/7-states_list.sql) to have some data
     You must use the option strict_slashes=False in your route definition
 
 IMPORTANT
@@ -738,6 +740,8 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/cities_by_states ; echo ""
 </HTML>
 guillaume@ubuntu:~$
 
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/9a7ae8155274b17881442200437e8793cf08de48.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230726%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230726T175931Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=4b64c03dfdda99287b6280f739fcffc5b759072ec30edf90ed5ca00bacf48938)
+
 Repo:
 
     GitHub repository: AirBnB_clone_v2
@@ -759,7 +763,7 @@ Write a script that starts a Flask web application:
     Routes:
         /states: display a HTML page: (inside the tag BODY)
             H1 tag: “States”
-            UL tag: with the list of all State objects present in DBStorage sorted by name (A->Z) tip
+            UL tag: with the list of all State objects present in DBStorage sorted by name (A->Z) [tip](https://jinja.palletsprojects.com/en/2.9.x/templates/)
                 LI tag: description of one State: <state.id>: <B><state.name></B>
         /states/<id>: display a HTML page: (inside the tag BODY)
             If a State object is found with this id:
@@ -774,7 +778,7 @@ Write a script that starts a Flask web application:
 
 IMPORTANT
 
-    Make sure you have a running and valid setup_mysql_dev.sql in your AirBnB_clone_v2 repository (Task)
+    Make sure you have a running and valid setup_mysql_dev.sql in your AirBnB_clone_v2 repository ([Task](https://intranet.alxswe.com/tasks/1609))
     Make sure all tables are created when you run echo "quit" | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py
 
 guillaume@ubuntu:~/AirBnB_v2$ curl -o 7-dump.sql "https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/290/7-states_list.sql"
@@ -892,11 +896,11 @@ Write a script that starts a Flask web application:
                 Replace the content of the H4 tag under each filter title (H3 States and H3 Amenities) by &nbsp;
             State, City and Amenity objects must be loaded from DBStorage and sorted by name (A->Z)
     You must use the option strict_slashes=False in your route definition
-    Import this 10-dump to have some data
+    Import this [10-dump](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/290/10-hbnb_filters.sql) to have some data
 
 IMPORTANT
 
-    Make sure you have a running and valid setup_mysql_dev.sql in your AirBnB_clone_v2 repository (Task)
+    Make sure you have a running and valid setup_mysql_dev.sql in your AirBnB_clone_v2 repository ([Task](https://intranet.alxswe.com/tasks/1609))
     Make sure all tables are created when you run echo "quit" | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py
 
 guillaume@ubuntu:~/AirBnB_v2$ curl -o 10-dump.sql "https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/290/10-hbnb_filters.sql"
@@ -907,6 +911,14 @@ guillaume@ubuntu:~/AirBnB_v2$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_p
 ....
 
 In the browser:
+
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/4f993ec8ca2a2f639a80887667106ac63a0a3701.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230726%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230726T175931Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e06087508ce8310b9184c5b49eb9f6f7b6251f0cad65b1c0257ea4014d61c311)
+
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/1549b553d726cc37f64440be910cb6b858aa32ae.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230726%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230726T175931Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=cc40ab4ae30f06b3c0bdf532f61a7862b71af44ae0374b16487b4805a158842a)
+
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/94b3a416ba1551c59701eb6672ac0a36fbebba14.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230726%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230726T175931Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d30deb2cd4fa1894159c56a935b0147fbce2641e3de247ec294d225737163c08)
+
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/1e559707dd34a37564dc10e54b707815a516d363.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230726%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230726T175931Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=9a89a735085c0d7a4b21446aa533197e53c487a3344c49fb1b0c330d6002a5ba)
 
 Repo:
 
