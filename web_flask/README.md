@@ -1,5 +1,8 @@
-0x04. AirBnB clone - Web framework
-PythonBack-endWebserverFlask
+# [0x04. AirBnB clone - Web framework](https://intranet.alxswe.com/projects/290)
+<button>>Python</button>
+<button>Back-end</button>
+<button>Webserver</button>
+<button>Flask</button>
 
     By: Guillaume, CTO at Holberton School
     Weight: 2
@@ -18,17 +21,17 @@ Resources
 
 Read or watch:
 
-- [What is a Web Framework?]()
-- [A Minimal Application]()
-- [Routing]() (except “HTTP Methods”)
-- [Rendering Templates]()
-- [Synopsis]()
-- [Variables]()
-- [Comments]()
-- [Whitespace Control]()
-- [List of Control Structures]() (read up to “Call”)
-- [Flask]()
-- [Jinja]()
+- [What is a Web Framework?](https://intelegain-technologies.medium.com/what-are-web-frameworks-and-why-you-need-them-c4e8806bd0fb)
+- [A Minimal Application](https://flask.palletsprojects.com/en/1.0.x/quickstart/#a-minimal-application)
+- [Routing](https://flask.palletsprojects.com/en/1.0.x/quickstart/#routing) (except “HTTP Methods”)
+- [Rendering Templates](https://flask.palletsprojects.com/en/1.0.x/quickstart/#rendering-templates)
+- [Synopsis](https://jinja.palletsprojects.com/en/2.9.x/templates/#synopsis)
+- [Variables](https://jinja.palletsprojects.com/en/2.9.x/templates/#variables)
+- [Comments](https://jinja.palletsprojects.com/en/2.9.x/templates/#comments)
+- [Whitespace Control](https://jinja.palletsprojects.com/en/2.9.x/templates/#whitespace-control)
+- [List of Control Structures](https://jinja.palletsprojects.com/en/2.9.x/templates/#list-of-control-structures) (read up to “Call”)
+- [Flask](https://palletsprojects.com/p/flask/)
+- [Jinja](https://jinja.palletsprojects.com/en/2.9.x/templates/)
 
 Learning Objectives
 
@@ -950,7 +953,7 @@ Write a script that starts a Flask web application:
                 Make sure all HTML tags from objects are correctly used (example: <BR /> must generate a new line)
             State, City, Amenity and Place objects must be loaded from DBStorage and sorted by name (A->Z)
     You must use the option strict_slashes=False in your route definition
-    Import this 100-dump to have some data
+    Import this [100-dump](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/290/100-hbnb.sql) to have some data
 
 IMPORTANT
 
@@ -965,6 +968,10 @@ guillaume@ubuntu:~/AirBnB_v2$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_p
 ....
 
 In the browser:
+
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/396ae10c9f85a6128ae40e1b63f4bce95adf411c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230726%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230726T175931Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=4d64ffb0f5e464e074bb865c69378783149631474e64777fc1a2ba26ccbfc021)
+
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/9eb21499b5f3b59751fdbf561174e2f259d97482.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230726%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230726T175931Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=9f09f9a259490385cf1002560e7d503a68ff840664f616da62241035e81b706a)
 
 Repo:
 
