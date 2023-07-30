@@ -1,5 +1,5 @@
 # [0x04. AirBnB clone - Web framework](https://intranet.alxswe.com/projects/290)
-<button>>Python</button>
+<button>Python</button>
 <button>Back-end</button>
 <button>Webserver</button>
 <button>Flask</button>
@@ -22,9 +22,9 @@ Resources
 Read or watch:
 
 - [What is a Web Framework?](https://intelegain-technologies.medium.com/what-are-web-frameworks-and-why-you-need-them-c4e8806bd0fb)
-- [A Minimal Application](https://flask.palletsprojects.com/en/1.0.x/quickstart/#a-minimal-application)
-- [Routing](https://flask.palletsprojects.com/en/1.0.x/quickstart/#routing) (except “HTTP Methods”)
-- [Rendering Templates](https://flask.palletsprojects.com/en/1.0.x/quickstart/#rendering-templates)
+- [A Minimal Application](https://flask.palletsprojects.com/en/2.3.x/quickstart/#a-minimal-application)
+- [Routing](https://flask.palletsprojects.com/en/2.3.x/quickstart/#routing) (except “HTTP Methods”)
+- [Rendering Templates](https://flask.palletsprojects.com/en/2.3.x/quickstart/#rendering-templates)
 - [Synopsis](https://jinja.palletsprojects.com/en/2.9.x/templates/#synopsis)
 - [Variables](https://jinja.palletsprojects.com/en/2.9.x/templates/#variables)
 - [Comments](https://jinja.palletsprojects.com/en/2.9.x/templates/#comments)
