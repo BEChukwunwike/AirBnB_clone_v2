@@ -12,7 +12,7 @@ $nginx_conf = "server {
 	index index.html index.htm;
     }
     location /redirect_me {
-    	return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    	return 301 https://cuberule.com/;
     }
     error_page 404 /404.html;
     location /404 {
@@ -48,7 +48,7 @@ ensure => 'directory'
 
 file { '/data/web_static/releases/test/index.html':
   ensure  => 'present',
-  content => "AirBnB Clone Puppet test\n"
+  content => "<html><head></head><body>Holberton School</body></html>"
 } ->
 
 file { '/data/web_static/current':
@@ -70,7 +70,7 @@ file { '/var/www/html':
 
 file { '/var/www/html/index.html':
   ensure  => 'present',
-  content => "Hello World!\n"
+  content => "<html><head></head><body>Holberton School</body></html>"
 } ->
 
 file { '/var/www/html/404.html':
